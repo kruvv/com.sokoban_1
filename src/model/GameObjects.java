@@ -10,12 +10,22 @@ public class GameObjects {
     private Set<Home> homes;
     private Player player;
 
+    /** Конструктор объектов на игровом поле
+     *
+     * @param walls
+     * @param boxes
+     * @param homes
+     * @param player
+     */
+
     public GameObjects(Set<Wall> walls, Set<Box> boxes, Set<Home> homes, Player player) {
         this.walls = walls;
         this.boxes = boxes;
         this.homes = homes;
         this.player = player;
     }
+
+
 
     public Set<GameObject> getAll() {
         Set<GameObject> result = new HashSet<>();

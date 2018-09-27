@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 public class Controller implements EventListener {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(Controller.class));
+   // private static final Logger log = Logger.getLogger(String.valueOf(Controller.class));
 
     private View view;
     private Model model;
@@ -23,7 +23,7 @@ public class Controller implements EventListener {
         this.model = new Model();
 
         view.init();
-        log.info("Вызвана инициация контроллера");
+       // log.info("Вызвана инициация контроллера");
         view.setEventListener(this);
         model.restart();
         model.setEventListener(this);

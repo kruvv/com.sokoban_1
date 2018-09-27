@@ -7,12 +7,26 @@ import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
 
+/** Загрузчик уроней игры
+ *
+ */
 public class LevelLoader {
     private Path levels;
+
+    /** Конструктор класса
+     *
+     * @param levels
+     */
 
     public LevelLoader(Path levels) {
         this.levels = levels;
     }
+
+    /** Выбор уровня
+     *
+     * @param level
+     * @return
+     */
 
     public GameObjects getLevel(int level) {
         {

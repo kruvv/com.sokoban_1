@@ -5,6 +5,11 @@ import java.awt.*;
 public abstract class GameObject {
     private int x, y, width, height;
 
+    /** Конструктор первоначальной инициализации игры
+     *
+     * @param x
+     * @param y
+     */
     public GameObject(int x, int y) {
         this.x = x;
         this.y = y;
@@ -12,12 +17,25 @@ public abstract class GameObject {
         this.height = Model.FIELD_CELL_SIZE;
     }
 
+    /** Конструктор основной
+     *
+     * @param x
+     * @param y
+     * @param width
+     * @param height
+     */
+
     public GameObject(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
     }
+
+    /** Метод отрисовки игровых объектов
+     *
+     * @param graphics
+     */
 
     public abstract void draw(Graphics graphics);
 

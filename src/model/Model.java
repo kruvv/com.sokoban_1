@@ -19,6 +19,10 @@ public class Model {
 
     private static final Logger logModel = Logger.getLogger(String.valueOf(Model.class));
 
+    /** Конструктор по умолчанию
+     *
+     * @throws IOException
+     */
     public Model() throws IOException {
     }
 
@@ -31,14 +35,26 @@ public class Model {
         return gameObjects;
     }
 
+    /** Повторный запуск уровня
+     *
+     * @param level
+     */
+
     public void restartLevel(int level) {
         this.gameObjects = levelLoader.getLevel(level);
     }
+
+    /** Вызов метода повторного запуска уровня
+     *
+     */
 
     public void restart() {
         restartLevel(currentLevel);
     }
 
+    /** Запускает новый уровень
+     *
+     */
     public void startNextLevel() {
         currentLevel = currentLevel + 1;
         restartLevel(currentLevel);
@@ -75,6 +91,12 @@ public class Model {
         checkCompletion();
     }
 
+    /** Проверка на столкновение игрока с стеной
+     *
+     * @param gameObject
+     * @param direction
+     * @return
+     */
     public boolean checkWallCollision(CollisionObject gameObject, Direction direction) {
         for (Wall wall : gameObjects.getWalls()) {
             if (gameObject.isCollision(wall, direction))
